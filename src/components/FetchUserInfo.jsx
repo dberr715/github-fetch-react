@@ -5,12 +5,13 @@ import { UserNameForm } from "./UserNameForm";
 
 export const FetchUserInfo = () => {
   const [userName, setUserName] = useState("");
-  const [userInfo, setUserInfo] = useState("User Info will show here");
+  //   const [userInfo, setUserInfo] = useState("User Info will show here");
   const [userDisplay, setUserDisplay] = useState();
 
-  console.log(userInfo);
   const handleInputChange = (e) => {
     setUserName(e.target.value);
+    // setUserName("");
+    // setUserDisplay("");
   };
   const handleClick = (e) => {
     // setUserName(userInfo);
@@ -37,6 +38,7 @@ export const FetchUserInfo = () => {
       <UserNameForm
         handleInputChange={handleInputChange}
         handleClick={handleClick}
+        userName={userName}
       />
       {/* <form>
         <input
