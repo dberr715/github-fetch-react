@@ -1,7 +1,21 @@
 import { useState } from "react";
-
+import styled from "styled-components";
 import { UserInfoDisplay } from "./UserInfoDisplay";
 import { UserNameForm } from "./UserNameForm";
+
+const MainWrapper = styled.div`
+  background-image: repeating-linear-gradient(
+    190deg,
+    blue 1%,
+    yellow 5%,
+    green 15%
+  );
+`;
+
+const HeaderWrap = styled.div`
+  background-color: #7873a3;
+  border: dashed 3px red;
+`;
 
 export const FetchUserInfo = () => {
   const [userName, setUserName] = useState("");
@@ -33,8 +47,10 @@ export const FetchUserInfo = () => {
   };
 
   return (
-    <>
-      <h1>Github User Info</h1>
+    <MainWrapper>
+      <HeaderWrap>
+        <h1>Github User Info</h1>
+      </HeaderWrap>
       <UserNameForm
         handleInputChange={handleInputChange}
         handleClick={handleClick}
@@ -61,6 +77,6 @@ export const FetchUserInfo = () => {
           <img src={userDisplay.avatar_url} alt="Profile Pic" />
         </li>
       </ul> */}
-    </>
+    </MainWrapper>
   );
 };
